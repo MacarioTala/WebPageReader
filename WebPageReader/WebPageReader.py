@@ -9,6 +9,7 @@ import re
 import io
 from collections import defaultdict
 import heapq 
+import constants
 
 def getPageFromWeb(url):
     """
@@ -96,7 +97,8 @@ def returnTop3DictionaryEntries(dictionary):
     return result
 
 def stripDictionaryOfArticles(dictionary):
-    exclusionList = {"a","the","to","of","and","that","in","for","is","as","are","an","with"}
+    exclusionList = constants.Articles 
+    exclusionList.append("with")
     for word in exclusionList:
         dictionary.pop(word,None)
     return dictionary

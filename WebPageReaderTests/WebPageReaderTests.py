@@ -3,6 +3,8 @@ import sys
 import requests
 from collections import defaultdict
 
+#please note: paths used here are absolutes, change them to match your environment
+
 def test_getPageFromWebReturnsSuccessWhenPresent():
     url = r"https://pythonbasics.org/multiple-return/"
     success = 200
@@ -87,13 +89,19 @@ def test_isolateBodyFromHTMLReturnsHTMLBodyOnly():
 #test_isolateBodyFromHTMLReturnsHTMLBodyOnly()
 
 #working area
-result = WebPageReader.countWordFrequencyInString(WebPageReader.stripStringOfPunctuation(WebPageReader.isolateBodyFromHTML(WebPageReader.readOfflinePage(r"C:\Files\Articles\Design Thinking Comes of Age.htm"))))
+#result = WebPageReader.countWordFrequencyInString(WebPageReader.stripStringOfPunctuation(WebPageReader.isolateBodyFromHTML(WebPageReader.readOfflinePage(r"d:\Files\Articles\4 Ways to Improve Your Strategic Thinking Skills.html"))))
 
-for item in result:
-    print(item + " "+ str(result.get(item)))
+#for item in result:
+#    print(item + " "+ str(result.get(item)))
 
-result = WebPageReader.stripDictionaryOfArticles(result)
-result = WebPageReader.returnTop3DictionaryEntries(result)
+#result = WebPageReader.stripDictionaryOfArticles(result)
+#result = WebPageReader.returnTop3DictionaryEntries(result)
 
-for item in result:
-    print(item + " " +str(result.get(item)))
+#for item in result:
+#    print(item + " " +str(result.get(item)))
+
+import constants
+exclusionList = constants.Articles
+exclusionList.append("with")
+for thing in exclusionList:
+    print(thing)
